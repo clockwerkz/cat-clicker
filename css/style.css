@@ -1,0 +1,17 @@
+body {
+    background-color: #dedede;
+    color: #333;
+    padding: 0;
+    margin: 0;
+}
+h1, h2 {
+    text-align: center;
+}
+img {
+    display: block;
+    margin: 0 auto;
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
