@@ -3,21 +3,40 @@ const catClicker = document.getElementById('cat-clicker');
 const cats = [
     { name : 'Cleo',
       clickCount : 0,
-      altText : 'Photo of kitten Cleo with her siblings',
+      altText : 'Kitten Cleo with her siblings',
       img : 'img/q-aila-162475-unsplash.jpg'},
       { name : 'Clyde',
       clickCount : 0,
-      altText : 'Photo of Clyde being lazy on the arm of a couch',
+      altText : 'Clyde being lazy on the arm of a couch',
       img : 'img/sabri-tuzcu-213760-unsplash.jpg'},
+      { name : 'Bonnie',
+      clickCount : 0,
+      altText : 'Bonnie looking up to see if it\'s snack time',
+      img : 'img/bonnie.jpg'},
+      { name : 'Max',
+      clickCount : 0,
+      altText : 'Something catches Max\'s eye while on the street',
+      img : 'img/max.jpg'},
+      { name : 'Noah',
+      clickCount : 0,
+      altText : 'Noah playing with a string of yarn while on a plastic chair',
+      img : 'img/noah.jpg'}
 ];
+
+cats.sort((a,b) => a.name > b.name );
 
 const catList = document.querySelector('aside .list-of-cats');
 for (let cat of cats) {
     catList.innerHTML += `<li class='cat-item'>${cat.name}</li>`
 }
 
-for (let cat of cats) {
+catList.addEventListener('click', (e) => {
+    updateDisplay(e.target.textContent);
+});
+
+const updateDisplay = (name) => {
     let catEntry = document.createElement('div');
+    const cat = cats.filter(cat => cat.name === name)[0];
     catEntry.innerHTML =  `
             <div class='entry-body'>
                 <img src='${cat.img}' class='cat-img' alt='${cat.altText}'/>
@@ -27,11 +46,15 @@ for (let cat of cats) {
     
     `;
     catEntry.classList.add('cat-entry');
-    console.log(catEntry);
     catEntry.addEventListener("click", function(e) {
         let counter = this.querySelector('.click-count');
-        counter.innerHTML = parseInt(counter.innerHTML)+1;
-        
+        let newCount = parseInt(counter.innerHTML)+1;
+        const name = this.querySelector('.cat-name').textContent;
+        const cat = cats.filter(cat => cat.name === name)[0];
+        cat.clickCount = newCount;
+        counter.innerHTML = newCount;
     });
+    catClicker.innerHTML = '';
     catClicker.appendChild(catEntry);
 }
+
