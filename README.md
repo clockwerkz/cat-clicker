@@ -1,11 +1,11 @@
 # cat-clicker
 This is a cat clicker app based off the Udacity Front End Developer project
 
-## Cat Clicker Version 3 In Progress
+## Cat Clicker Version 3
 
 See it here: [Cat Clicker Version 3](https://clockwerkz.github.io/cat-clicker/)
 
-Working on the third iteration of cat clicker, using a list to select the cat to display.
+Cat Clicker App now utilizes a list of cat names on the sidebar. Clicking on a name will display the cat in the main section, with the running total of clicks.
 
 
 ##  Cat Clicker Version 2 
