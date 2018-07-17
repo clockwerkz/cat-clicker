@@ -3,7 +3,7 @@ This is a cat clicker app based off the Udacity Front End Developer project
 
 ## Cat Clicker Version 3 In Progress
 
-See it here: [Cat Clicker Version 2](https://clockwerkz.github.io/cat-clicker/)
+See it here: [Cat Clicker Version 3](https://clockwerkz.github.io/cat-clicker/)
 
 Working on the third iteration of cat clicker, using a list to select the cat to display.
 
